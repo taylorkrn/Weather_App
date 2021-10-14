@@ -1,6 +1,12 @@
 .weather-box{
     display: inline-grid;
-    grid-template-columns: 40% 30% 30%;
-    grid-template-rows: 40% 30% 30%;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 25% 25% 25% 25%;
     grid-row-gap: 10px;
+}
+
+body {
+    background-image: url('berlin.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }

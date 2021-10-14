@@ -4,17 +4,22 @@ $(document).ready(function() {
             console.log(data);
 
             const weatherData = data.current;
+
+            var iconString = '.' + weatherData.condition.icon.substring(20);
+
             var string = '<div style="grid-area: 1/1/2/2">Last Updated: ' + weatherData.last_updated + '</div>';
 
-            string += '<div style="grid-area: 1/2/2/3">' + weatherData.condition.text + '</div>';
+            string += '<img src=' + iconString + ' style="grid-area: 2/1/4/2">';
 
-            string += '<div style="grid-area: 2/2/3/3">Temperature: ' + weatherData.temp_c + ' C</div>';
+            string += '<div style="grid-area: 4/1/5/2">' + weatherData.condition.text + '</div>';
 
-            string += '<div style="grid-area: 2/3/3/4">Feels like: ' + weatherData.feelslike_c + ' C</div>';
+            string += '<div style="grid-area: 1/2/2/3">Temperature: ' + weatherData.temp_c + ' C</div>';
+
+            string += '<div style="grid-area: 2/2/3/3">Feels like: ' + weatherData.feelslike_c + ' C</div>';
 
             string += '<div style="grid-area: 3/2/4/3">Wind: ' + weatherData.wind_dir + ' ' + weatherData.wind_kph + 'Kph </div>';
 
-            string += '<div style="grid-area: 3/3/4/4">Precipitation: ' + weatherData.precip_mm + 'mm</div>';
+            string += '<div style="grid-area: 4/2/5/3">Precipitation: ' + weatherData.precip_mm + 'mm</div>';
 
             $("#show-weather").html(string);
             if (status === "success"){
@@ -38,15 +43,21 @@ $(document).ready(function() {
 
                 const weatherData = forecastArray[i].day;
 
-                string += '<div style="grid-area: 1/2/2/3">' + weatherData.condition.text + '</div>';
+                var iconString = '.' + weatherData.condition.icon.substring(20);
 
-                string += '<div style="grid-area: 2/2/3/3">Max:' + weatherData.maxtemp_c+ ' C, Min: ' + weatherData.mintemp_c + ' C</div>';
+                console.log(iconString);
 
-                string += '<div style="grid-area: 2/3/3/4">Average: ' + weatherData.avgtemp_c + ' C</div>';
+                string += '<img src=' + iconString + ' style="grid-area: 2/1/4/2">';
+
+                string += '<div style="grid-area: 5/1/5/2">' + weatherData.condition.text + '</div>';
+
+                string += '<div style="grid-area: 1/2/2/3">Max:' + weatherData.maxtemp_c+ ' C, Min: ' + weatherData.mintemp_c + ' C</div>';
+
+                string += '<div style="grid-area: 2/2/3/3">Average: ' + weatherData.avgtemp_c + ' C</div>';
 
                 string += '<div style="grid-area: 3/2/4/3">Max Wind: ' + weatherData.maxwind_kph + 'Kph </div>';
 
-                string += '<div style="grid-area: 3/3/4/4">Chance:' + weatherData.daily_chance_of_rain + '%, Precipitation: ' + weatherData.totalprecip_mm + 'mm</div>';
+                string += '<div style="grid-area: 4/2/5/3">Chance:' + weatherData.daily_chance_of_rain + '%, Precipitation: ' + weatherData.totalprecip_mm + 'mm</div>';
 
                 string += '</div>';
             };
