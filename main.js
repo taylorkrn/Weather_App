@@ -8,6 +8,9 @@ $(document).ready(function() {
             });
             string += '<ul>';
             $("#show-weather").html(string);
+            if (status === "success"){
+                $("get-weather-button").hide();
+            }
         });
     });
 
@@ -27,15 +30,6 @@ $(document).ready(function() {
             };
             string += '<ul>';
             $("#show-forecast").html(string);
-            // $.each(data.forecast.forecastday, function(index,value) {
-            //     if (index === "date"){
-            //         console.log(value);
-            //     };
-            // });
-            //     string += "<li>"+index+": "+value+"</li>";
-            // });
-            // string += '<ul>';
-            // $("#show-forecast").html(string);
         });
     });
 });
