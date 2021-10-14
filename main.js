@@ -1,8 +1,6 @@
 $(document).ready(function() {
     $("#get-weather-button").on('click', function() {
         $.get('http://api.weatherapi.com/v1/current.json?key=9b35f3bc34574268a6b120401211410&q=Berlin&aqi=no', function(data, status) {
-            console.log(data);
-
             const weatherData = data.current;
 
             var iconString = '.' + weatherData.condition.icon.substring(20);
@@ -35,7 +33,7 @@ $(document).ready(function() {
             var string = '';
 
             const forecastArray = data.forecast.forecastday;
-            console.log(forecastArray);
+
             for (let i = 0; i < forecastArray.length; i++){
                 string += "<div class='weather-box'>";
 
@@ -44,8 +42,6 @@ $(document).ready(function() {
                 const weatherData = forecastArray[i].day;
 
                 var iconString = '.' + weatherData.condition.icon.substring(20);
-
-                console.log(iconString);
 
                 string += '<img src=' + iconString + ' style="grid-area: 2/1/4/2">';
 

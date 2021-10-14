@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Berlin Weather</title>
-    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div style="padding: 10px">
         <h1>Find out Berlin's Weather and Forecast</h1>
-        <h2>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></h2>
-        <button class="btn btn-primary" id="get-weather-button" style="align-self: center;">Get Weather</button>
-        <div id="show-weather" class="container weather-box"></div>
-        <button class="btn btn-primary" id="get-forecast-button">Get Forecast</button>
-        <div id="show-forecast" class="container"></div>
+        <h3>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></h3>
+        <div style="padding: 20px;">
+            <button class="button" id="get-weather-button" style="align-self: center;">Get Weather</button>
+            <div id="show-weather" class="weather-box"></div>
+            <button class="button" id="get-forecast-button">Get Forecast</button>
+            <div id="show-forecast" class="my-grid"></div>
+        </div>
     </div>
 </body>
 </html>
