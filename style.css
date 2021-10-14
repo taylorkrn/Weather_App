@@ -1,0 +1,6 @@
+.weather-box{
+    display: inline-grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: 40% 30% 30%;
+    grid-row-gap: 10px;
+}
