@@ -8,19 +8,27 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <div style="padding: 20px">
+    <div style="padding: 20px; padding-left: 50px; padding-right: 50px;">
         <h1 style="text-align: left; float: left">Berlin Weather</h1>
         <h1 style="text-align: right; float: right" id="myDate"></h1>
         <div class="myContainer">
-            <div class="MyFlex Weather">
-                <button class="button" id="get-weather-button" style="align-self: center;">Get Weather</button>
-                <div id="show-weather" class="weather-box"></div>
+            <div class="MyFlex">
+                <div>
+                    <button class="myButton" id="get-weather-button" style="align-self: center;">Get Weather</button>
+                </div>
+                <div id="show-weather" class="dataFlex weather">
+                    <div id="IconDescription"></div>
+                    <div id="Temperature"></div>
+                    <div id="WindPrecip"></div>
+                </div>
             </div>
-            <div class="MyFlex Forecast">
-                <button class="button" id="get-forecast-button">Get Forecast</button>
-                <div class="forecast-box"></div>
-                <div class="forecast-box"></div>
-                <div class="forecast-box"></div>
+            <div class="MyFlex">
+                <button class="myButton" id="get-forecast-button">Get Forecast</button>
+                <div class="dataFlex" id="forecast">
+                    <div class="day-box"></div>
+                    <div class="day-box"></div>
+                    <div class="day-box"></div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,92 +1,132 @@
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
+    h1{
+        transform: scale(0.75);
+    }
+}
+
+@media screen and (max-width: 700px){
+    #Temperature{
+        display:  none;
+    }
+    #WindPrecip{
+        display:  none;
+    }
     #myDate{
         display: none;
     }
 }
 
-@media screen and (max-width: 800px){
-    .weather-box{
-        width: 400px;
+@media screen and (max-width:  600px){
+    .myContainer{
+        width:  300px !important;
     }
-    .forecast-flex{
-        width: 400px;
+    .MyFlex{
+        width:  300px !important;
+    }
+    #forecast{
+        flex-direction: column;
+    }
+    body{
+        background-size: 1500px !important;
+        background-position: center top !important;
     }
 }
 
-h1 {
-    color:  white;
-}
-
-.weather-box{
-    grid-area: 1/2/2/3;
-    display: inline-grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 25% 25% 25% 25%;
-    max-width: 800px;
-    color: white;
-}
 
 body {
     background-image: url('berlin.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left top;
-    font-family: "Rubik", "Helvetica Neue", sans-serif;
-}
-
-.my-grid {
-    display: inline-grid;
-    grid-template-columns: 33% 34% 33%;
-}
-
-.button{
-    background-color: #e7e7e7; /* Green */
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: "Rubik", "Helvetica Neue", sans-serif;
-    width: auto;
+    font-family: Rubik, Helvetica Neue, sans-serif;
+    color:  white;
 }
 
 html{
     height: 100%
 }
 
-#get-weather-button{
-    grid-area: 1/1/2/2;
-    width: min-content;
-    height: min-content;
-}
-
-#get-forecast-button{
-    grid-area: 2/1/3/2;
-    width: min-content;
-    height: min-content;
+p{
+    font-size: 12px;
 }
 
 .myContainer{
     margin-top: 100px;
-    width: 600px;
+    padding: 20px;
+    width: 550px;
+    gap: 50px;
     display: flex;
     flex-direction: column;
-    align-content: space-around;
+    align-content: flex-start;
     justify-content: flex-start;
-
+    background-color: rgba(75, 75, 75, 0.5);
+    border-radius:  10px;
 }
 
-.forecast-box{
-    display: grid;
-    grid-template-rows: 20% 60% 20%;
-    max-width: 800px;
-    color: white;
+
+.myButton{
+    background-color: #e7e7e7;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Rubik, Helvetica Neue, sans-serif;
+    width: auto;
+    border-radius: 15px;
+    order: 1;
+    width: min-content;
+    height: min-content;
+}
+
+.myButton:hover{
+    transform: scale(1.05);
+    border: 1px solid blue;
+}
+
+.myButton:active{
+    transform: scale(1.1);
+    border: 1px solid red;
+    color: red;
 }
 
 .MyFlex{
     flex-basis: 200px;
+    max-width:  600px;
+    gap:  40px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
+}
+
+.dataFlex{
+    display: flex;
+    gap:  40px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: space-around;
+    transform: ;
+}
+
+#forecast{
+    order: 2;
+}
+
+.day-box{
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    max-width: 200px;
+    align-content: center;
+    grid-gap: 5px;
+}
+
+.Date{
+    align-content: center;
+}
+
+.Icon{
+    align-content: center;
+
 }
