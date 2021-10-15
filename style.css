@@ -13,6 +13,10 @@
     }
 }
 
+h1 {
+    color:  white;
+}
+
 .weather-box{
     grid-area: 1/2/2/3;
     display: inline-grid;
@@ -26,7 +30,7 @@ body {
     background-image: url('berlin.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: left top;
     font-family: "Rubik", "Helvetica Neue", sans-serif;
 }
 
@@ -64,14 +68,13 @@ html{
 }
 
 .myContainer{
-    margin: 100px;
+    margin-top: 100px;
     width: 600px;
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 50% 50%;
-    grid-column-gap: 20px;
-    grid-row-gap: 50px;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: flex-start;
+
 }
 
 .forecast-box{
@@ -81,8 +84,9 @@ html{
     color: white;
 }
 
-.forecast-flex{
+.MyFlex{
+    flex-basis: 200px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
