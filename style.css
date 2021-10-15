@@ -1,4 +1,20 @@
+@media screen and (max-width: 600px){
+    #myDate{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .weather-box{
+        width: 400px;
+    }
+    .forecast-flex{
+        width: 400px;
+    }
+}
+
 .weather-box{
+    grid-area: 1/2/2/3;
     display: inline-grid;
     grid-template-columns: 70% 30%;
     grid-template-rows: 25% 25% 25% 25%;
@@ -33,4 +49,40 @@ body {
 
 html{
     height: 100%
+}
+
+#get-weather-button{
+    grid-area: 1/1/2/2;
+    width: min-content;
+    height: min-content;
+}
+
+#get-forecast-button{
+    grid-area: 2/1/3/2;
+    width: min-content;
+    height: min-content;
+}
+
+.myContainer{
+    margin: 100px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 50px;
+    align-content: center;
+}
+
+.forecast-box{
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    max-width: 800px;
+    color: white;
+}
+
+.forecast-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

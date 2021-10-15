@@ -9,15 +9,30 @@
 </head>
 <body>
     <div style="padding: 10px">
-        <h1>Berlin Weather</h1>
-        <div style="padding: 20px;">
+        <h1 style="text-align: left; float: left">Berlin Weather</h1>
+        <h1 style="text-align: right; float: right" id="myDate"></h1>
+        <div class="myContainer">
             <button class="button" id="get-weather-button" style="align-self: center;">Get Weather</button>
             <div id="show-weather" class="weather-box"></div>
             <button class="button" id="get-forecast-button">Get Forecast</button>
-            <div id="show-forecast" class="my-grid"></div>
+            <div class="forecast-flex">
+                <div class="forecast-box"></div>
+                <div class="forecast-box"></div>
+                <div class="forecast-box"></div>
+            </div>
         </div>
     </div>
 
-    <p style="position: fixed; bottom: 0; right: 0; color: white">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></p>
+    <p style="position: fixed; bottom: 0; right: 5px; color: white">Powered by <a style="color:  white;" href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></p>
+    <script>
+        function printDate(){
+            var currentDate = new Date();
+            var dateTime = currentDate.getDate() + "/" + (currentDate.getMonth()+1) + "/" + currentDate.getFullYear() + "  " + currentDate.getHours() + ":" + currentDate.getMinutes();
+            document.getElementById('myDate').innerHTML = dateTime;
+            setTimeout(printDate, 5000);
+        };
+
+        printDate()
+    </script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $("#get-weather-button").on('click', function() {
         $.get('http://api.weatherapi.com/v1/current.json?key=9b35f3bc34574268a6b120401211410&q=Berlin&aqi=no', function(data, status) {
@@ -5,7 +6,9 @@ $(document).ready(function() {
 
             var iconString = '.' + weatherData.condition.icon.substring(20);
 
-            var string = '<div style="grid-area: 1/1/2/2">Last Updated: ' + weatherData.last_updated + '</div>';
+            var updated = weatherData.last_updated.split(' ');
+
+            var string = '<div style="grid-area: 1/1/2/2">Updated: ' + updated[1] + '</div>';
 
             string += '<img src=' + iconString + ' style="grid-area: 2/1/4/2">';
 
@@ -35,27 +38,29 @@ $(document).ready(function() {
             const forecastArray = data.forecast.forecastday;
 
             for (let i = 0; i < forecastArray.length; i++){
-                string += "<div class='weather-box'>";
+                var string = "";
 
-                string += "<div style='grid-area: 1/1/2/2'>Date: "+forecastArray[i].date+"</div>";
+                var date = forecastArray[i].date.split("-");
+
+                string += "<div style='grid-item: 1'>"+ date[2] + "/" + date[1] +"</div>";
 
                 const weatherData = forecastArray[i].day;
 
                 var iconString = '.' + weatherData.condition.icon.substring(20);
 
-                string += '<img src=' + iconString + ' style="grid-area: 2/1/4/2">';
+                string += '<img style="grid-item: 2" src=' + iconString + '>';
 
-                string += '<div style="grid-area: 5/1/5/2">' + weatherData.condition.text + '</div>';
+                string += '<div style="grid-iteam: 3">' + weatherData.condition.text + '</div>';
 
-                string += '<div style="grid-area: 1/2/2/3">Max:' + weatherData.maxtemp_c+ ' C, Min: ' + weatherData.mintemp_c + ' C</div>';
+                // string += '<div style="grid-area: 1/2/2/3">Max:' + weatherData.maxtemp_c+ ' C, Min: ' + weatherData.mintemp_c + ' C</div>';
 
-                string += '<div style="grid-area: 2/2/3/3">Average: ' + weatherData.avgtemp_c + ' C</div>';
+                // string += '<div style="grid-area: 2/2/3/3">Average: ' + weatherData.avgtemp_c + ' C</div>';
 
-                string += '<div style="grid-area: 3/2/4/3">Max Wind: ' + weatherData.maxwind_kph + 'Kph </div>';
+                // string += '<div style="grid-area: 3/2/4/3">Max Wind: ' + weatherData.maxwind_kph + 'Kph </div>';
 
-                string += '<div style="grid-area: 4/2/5/3">Chance:' + weatherData.daily_chance_of_rain + '%, Precipitation: ' + weatherData.totalprecip_mm + 'mm</div>';
+                // string += '<div style="grid-area: 4/2/5/3">Chance:' + weatherData.daily_chance_of_rain + '%, Precipitation: ' + weatherData.totalprecip_mm + 'mm</div>';
 
-                string += '</div>';
+                $(".forecast-box").eq(i).html(string);
             };
             $("#show-forecast").html(string);
             if (status === "success"){
