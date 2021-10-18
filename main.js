@@ -5,7 +5,7 @@ $(document).ready(function() {
 
             var iconString = '.' + weatherData.condition.icon.substring(20);
             idString = '<img src=' + iconString + '>';
-            idString += '<p>' + weatherData.condition.text + '</div>';
+            idString += '<p>' + weatherData.condition.text + '</p>';
             $("#IconDescription").html(idString);
 
             var tempString = '<p><strong>Temp:</strong> ' + weatherData.temp_c + ' C</p>';
