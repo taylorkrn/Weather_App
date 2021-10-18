@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $("#get-weather-button").on('click', function() {
         $.get('http://api.weatherapi.com/v1/current.json?key=9b35f3bc34574268a6b120401211410&q=Berlin&aqi=no', function(data, status) {
